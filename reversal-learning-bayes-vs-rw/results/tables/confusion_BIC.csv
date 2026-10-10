@@ -1,0 +1,4 @@
+,RW,Bayes,Bayes-fixedP
+RW,0.975,0.025,0.0
+Bayes,0.15,0.1,0.75
+Bayes-fixedP,0.0,0.0,1.0

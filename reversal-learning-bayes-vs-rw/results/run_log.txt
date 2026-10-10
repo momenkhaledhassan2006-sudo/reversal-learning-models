@@ -1,0 +1,103 @@
+
+================================================================================
+01_parameter_recovery.py
+================================================================================
+model         param                 r    rho    bias    rmse  @bound
+RW            alpha              0.97   0.97    0.01    0.07    0.01
+RW            beta               0.80   0.96    0.94    2.86    0.03
+   optimiser reached >= true-parameter likelihood in 100% of fits
+Bayes         h                  0.65   0.65   -0.00    0.06    0.02
+Bayes         p                  0.72   0.73   -0.00    0.09    0.11
+Bayes         beta               0.46   0.46    3.34    7.21    0.37
+Bayes         k=beta*(2p-1)      0.84   0.78     nan     nan     nan
+   optimiser reached >= true-parameter likelihood in 100% of fits
+Bayes-fixedP  h                  0.94   0.96    0.01    0.02    0.00
+Bayes-fixedP  beta               0.93   0.96    0.46    1.55    0.00
+   optimiser reached >= true-parameter likelihood in 100% of fits
+[01_parameter_recovery.py finished in 53s]
+
+================================================================================
+02_model_recovery.py
+================================================================================
+
+BIC: P(best-fitting model | generating model); mean diagonal = 0.69
+                    RW  Bayes  Bayes-fixedP
+gen=RW            0.98   0.02          0.00
+gen=Bayes         0.15   0.10          0.75
+gen=Bayes-fixedP  0.00   0.00          1.00
+
+AIC: P(best-fitting model | generating model); mean diagonal = 0.72
+                    RW  Bayes  Bayes-fixedP
+gen=RW            0.95   0.05          0.00
+gen=Bayes         0.12   0.30          0.57
+gen=Bayes-fixedP  0.00   0.08          0.92
+
+held-out LL: P(best-fitting model | generating model); mean diagonal = 0.73
+                    RW  Bayes  Bayes-fixedP
+gen=RW            0.95   0.05          0.00
+gen=Bayes         0.05   0.57          0.38
+gen=Bayes-fixedP  0.00   0.32          0.68
+[02_model_recovery.py finished in 160s]
+
+================================================================================
+03_fit_compare_ppc.py
+================================================================================
+       model  k    sum_LL   sum_AIC   sum_BIC  mean_heldout_LL_per_trial  mean_akaike_weight  n_best_BIC  n_best_heldout
+          RW  2 -5569.806 11299.612 11618.929                     -0.356               0.503          20              20
+       Bayes  3 -5535.499 11310.998 11789.974                     -0.358               0.218           2              10
+Bayes-fixedP  2 -5720.680 11601.360 11920.677                     -0.369               0.280          18              10
+
+Paired RW vs Bayes-fixedP: {'wilcoxon_p_heldout': 0.17869641572360706, 'n_subjects_bayes_better_heldout': 19, 'median_delta_heldout_per_trial': -0.008060806184698677, 'median_delta_bic': -4.121134358527328}
+
+True model x winner (best_bic):
+              Bayes  RW
+Bayes             2   0
+Bayes-fixedP     18   0
+RW                0  20
+
+True model x winner (best_aic):
+              Bayes  RW
+Bayes             5   0
+Bayes-fixedP     15   0
+RW                0  20
+
+True model x winner (best_cv):
+              Bayes  RW
+Bayes            10   0
+Bayes-fixedP     10   0
+RW                0  20
+
+Posterior-predictive failures (of 6 statistics, group-level, 95% two-sided):
+  data=Bayes  model=RW            failed=4/6  curve RMSE=0.047
+  data=Bayes  model=Bayes         failed=0/6  curve RMSE=0.032
+  data=Bayes  model=Bayes-fixedP  failed=0/6  curve RMSE=0.033
+  data=RW     model=RW            failed=0/6  curve RMSE=0.031
+  data=RW     model=Bayes         failed=3/6  curve RMSE=0.028
+  data=RW     model=Bayes-fixedP  failed=5/6  curve RMSE=0.045
+[03_fit_compare_ppc.py finished in 139s]
+
+================================================================================
+04_adaptation_benchmark.py
+================================================================================
+       model  param  beta   acc  early_acc  late_acc  t50
+Bayes-fixedP  0.005    20 0.837      0.145     0.989  6.0
+Bayes-fixedP  0.010    30 0.857      0.231     0.988  5.0
+Bayes-fixedP  0.020    30 0.869      0.295     0.983  4.0
+Bayes-fixedP  0.035    30 0.877      0.400     0.962  4.0
+Bayes-fixedP  0.050    20 0.875      0.471     0.944  3.0
+Bayes-fixedP  0.100    30 0.862      0.539     0.913  3.0
+Bayes-fixedP  0.200    20 0.802      0.644     0.823  2.0
+          RW  0.050    30 0.601      0.053     0.765 15.0
+          RW  0.100    15 0.681      0.061     0.875 12.0
+          RW  0.200    10 0.763      0.122     0.936  8.0
+          RW  0.300    10 0.798      0.169     0.950  7.0
+          RW  0.400    10 0.817      0.222     0.952  6.0
+          RW  0.600    10 0.830      0.301     0.945  5.0
+          RW  0.800    30 0.835      0.298     0.953  5.0
+          RW  1.000    15 0.768      0.567     0.798  2.0
+
+Best-case operating point per learning rule:
+       model  param  beta   acc  early_acc  late_acc  t50
+Bayes-fixedP  0.035    30 0.877      0.400     0.962  4.0
+          RW  0.800    30 0.835      0.298     0.953  5.0
+[04_adaptation_benchmark.py finished in 9s]

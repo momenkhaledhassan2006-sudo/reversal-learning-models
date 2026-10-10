@@ -1,0 +1,62 @@
+{
+  "BIC": {
+    "confusion": {
+      "RW": {
+        "RW": 0.975,
+        "Bayes": 0.025,
+        "Bayes-fixedP": 0.0
+      },
+      "Bayes": {
+        "RW": 0.15,
+        "Bayes": 0.1,
+        "Bayes-fixedP": 0.75
+      },
+      "Bayes-fixedP": {
+        "RW": 0.0,
+        "Bayes": 0.0,
+        "Bayes-fixedP": 1.0
+      }
+    },
+    "mean_diagonal": 0.6916666666666668
+  },
+  "AIC": {
+    "confusion": {
+      "RW": {
+        "RW": 0.95,
+        "Bayes": 0.05,
+        "Bayes-fixedP": 0.0
+      },
+      "Bayes": {
+        "RW": 0.125,
+        "Bayes": 0.3,
+        "Bayes-fixedP": 0.575
+      },
+      "Bayes-fixedP": {
+        "RW": 0.0,
+        "Bayes": 0.075,
+        "Bayes-fixedP": 0.925
+      }
+    },
+    "mean_diagonal": 0.725
+  },
+  "held-out LL": {
+    "confusion": {
+      "RW": {
+        "RW": 0.95,
+        "Bayes": 0.05,
+        "Bayes-fixedP": 0.0
+      },
+      "Bayes": {
+        "RW": 0.05,
+        "Bayes": 0.575,
+        "Bayes-fixedP": 0.375
+      },
+      "Bayes-fixedP": {
+        "RW": 0.0,
+        "Bayes": 0.325,
+        "Bayes-fixedP": 0.675
+      }
+    },
+    "mean_diagonal": 0.7333333333333334
+  }
+}

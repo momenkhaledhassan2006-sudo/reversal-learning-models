@@ -1,0 +1,161 @@
+{
+  "n_subjects": 40,
+  "n_trials": 400,
+  "group": [
+    {
+      "model": "RW",
+      "k": 2,
+      "sum_LL": -5569.806,
+      "sum_AIC": 11299.6121,
+      "sum_BIC": 11618.9293,
+      "mean_heldout_LL_per_trial": -0.3565,
+      "mean_akaike_weight": 0.5029,
+      "n_best_BIC": 20,
+      "n_best_heldout": 20
+    },
+    {
+      "model": "Bayes",
+      "k": 3,
+      "sum_LL": -5535.499,
+      "sum_AIC": 11310.9981,
+      "sum_BIC": 11789.9738,
+      "mean_heldout_LL_per_trial": -0.3577,
+      "mean_akaike_weight": 0.2175,
+      "n_best_BIC": 2,
+      "n_best_heldout": 10
+    },
+    {
+      "model": "Bayes-fixedP",
+      "k": 2,
+      "sum_LL": -5720.6798,
+      "sum_AIC": 11601.3597,
+      "sum_BIC": 11920.6769,
+      "mean_heldout_LL_per_trial": -0.3688,
+      "mean_akaike_weight": 0.2796,
+      "n_best_BIC": 18,
+      "n_best_heldout": 10
+    }
+  ],
+  "paired_RW_vs_BayesFixedP": {
+    "wilcoxon_p_heldout": 0.17869641572360706,
+    "n_subjects_bayes_better_heldout": 19,
+    "median_delta_heldout_per_trial": -0.008060806184698677,
+    "median_delta_bic": -4.121134358527328
+  },
+  "ground_truth_identification": {
+    "best_bic": {
+      "Bayes": {
+        "Bayes": 2,
+        "RW": 0
+      },
+      "Bayes-fixedP": {
+        "Bayes": 18,
+        "RW": 0
+      },
+      "RW": {
+        "Bayes": 0,
+        "RW": 20
+      }
+    },
+    "best_aic": {
+      "Bayes": {
+        "Bayes": 5,
+        "RW": 0
+      },
+      "Bayes-fixedP": {
+        "Bayes": 15,
+        "RW": 0
+      },
+      "RW": {
+        "Bayes": 0,
+        "RW": 20
+      }
+    },
+    "best_cv": {
+      "Bayes": {
+        "Bayes": 10,
+        "RW": 0
+      },
+      "Bayes-fixedP": {
+        "Bayes": 10,
+        "RW": 0
+      },
+      "RW": {
+        "Bayes": 0,
+        "RW": 20
+      }
+    }
+  },
+  "per_generating_model": {
+    "Bayes": {
+      "RW": {
+        "sum_BIC": 6439.264804484528,
+        "mean_heldout_LL": -0.3967085518080764
+      },
+      "Bayes": {
+        "sum_BIC": 5904.665816689344,
+        "mean_heldout_LL": -0.3550575907489689
+      },
+      "Bayes-fixedP": {
+        "sum_BIC": 5818.906756671813,
+        "mean_heldout_LL": -0.35546704204302004
+      }
+    },
+    "RW": {
+      "RW": {
+        "sum_BIC": 5179.664458752405,
+        "mean_heldout_LL": -0.3162093511880601
+      },
+      "Bayes": {
+        "sum_BIC": 5885.308012520852,
+        "mean_heldout_LL": -0.3603281185196516
+      },
+      "Bayes-fixedP": {
+        "sum_BIC": 6101.770095282455,
+        "mean_heldout_LL": -0.38218348667244034
+      }
+    }
+  },
+  "ppc": {
+    "Bayes": {
+      "RW": {
+        "n_stats_failed_of_6": 4,
+        "mean_frac_subject_stats_extreme": 0.15,
+        "reversal_curve_rmse": 0.047392818471786696,
+        "mean_mcmc_accept": 0.3381499999999999
+      },
+      "Bayes": {
+        "n_stats_failed_of_6": 0,
+        "mean_frac_subject_stats_extreme": 0.03333333333333333,
+        "reversal_curve_rmse": 0.031896375270473155,
+        "mean_mcmc_accept": 0.22394999999999995
+      },
+      "Bayes-fixedP": {
+        "n_stats_failed_of_6": 0,
+        "mean_frac_subject_stats_extreme": 0.008333333333333333,
+        "reversal_curve_rmse": 0.03253852884911711,
+        "mean_mcmc_accept": 0.35130000000000006
+      }
+    },
+    "RW": {
+      "RW": {
+        "n_stats_failed_of_6": 0,
+        "mean_frac_subject_stats_extreme": 0.008333333333333333,
+        "reversal_curve_rmse": 0.031008786604566754,
+        "mean_mcmc_accept": 0.35715
+      },
+      "Bayes": {
+        "n_stats_failed_of_6": 3,
+        "mean_frac_subject_stats_extreme": 0.18333333333333335,
+        "reversal_curve_rmse": 0.027922656141547455,
+        "mean_mcmc_accept": 0.27505
+      },
+      "Bayes-fixedP": {
+        "n_stats_failed_of_6": 5,
+        "mean_frac_subject_stats_extreme": 0.20833333333333334,
+        "reversal_curve_rmse": 0.04514318500960392,
+        "mean_mcmc_accept": 0.35895
+      }
+    }
+  }
+}
